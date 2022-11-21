@@ -10,50 +10,41 @@ A REGEX is a regular expression that is used to search for matches in a value or
 
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
-- [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
 - [The OR Operator](#the-or-operator)
 - [Flags](#flags)
+- [Grouping and Capturing](#grouping-and-capturing)
+- [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Character Escapes](#character-escapes)
 
 ## Regex Components
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Anchors
-Anchors are the beginning and end of a regular expression. IN this email code below,
-/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, the anchor is the ^ and the $. This code is telling the com puter that we are lookign for a string that starts with /^([a-z0-9_.-]+) and then end with .([a-z\.]{2,6})$/ so that is must start and finish with the given criteria with in the code. 
+Anchors are the beginning and finish of a regular expression. In the following code,
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, the anchor is the ^ and the $. Anchors are mostly used to validate an input. 
 
 ### Quantifiers
-The example of the REGEX includes these qualifiers: + which us used to match one or more of the proceeding token { 2, 6 } which matches the specific quality of the previos token, in this case between 2 and 6 characters. Conversily, it would be { 2, 6 } which would look for 2 digits exactly or { 2, 4 } which looks for 2 or more characters. 
-
-### Grouping Constructs
-The example inlcudes the following group: ([a-z0-9_\.-]+), this expression includes + which means we match at least one or more of the any characters in the square brackets [a-z0-9_\.-]. A-Z is lowercase letters and 0-9 is the number range. 
+In order for a match to be found, a Quantifier must specify how many instances a character must be present in the input. The email REGEX has the + as the quantifier that repeats a match one or more times.
 
 ### Bracket Expressions
-Backet expressions are used to specify characters to match, they are enclosed in square brakcets. Our REGEX has 3 brakcet expression: ([a-z0-9_\.-]+), ([\da-z\.-]+), and ([a-z\.]{2,6}). 
+Backet expressions are used to specify characters to match. Square brackets are used to indicate a set of characters to match and curly braces are used to specify an exact amount of characters to match. 
 
 ### Character Classes
-Character class distinguishes specific kinds of characters from certain sets. Our REGEX has charaters classes: . and \d The . means any character except a line break. By placing a \ in front of the . its "escaping" the character and is taken literally. The \d matches any single digit equivalent to [0-9]. 
+Character class distinguishes specific kinds of characters from certain sets. Any one can happen in a string input for a match to succeed. 
 
 ### The OR Operator
-The "or" operator within a regular expression is defined as using the | element. The component indicates that it could be either of the components that we are seperating with the |. For our hex value regualr expressiosn we have ([a-f0-9]{6}|[a-f0-9]{3}). Note the or operatopr seperates these 2 components. 
+The "or" operator within a regular expression is defined as using the | element. The component indicates that it could be either of the components that we are seperating with the |. 
+
 ### Flags
-A flag is an optional paramanater to a REGEX that modifies its behavior of searching. 
+A flag is an optional paramanater to a REGEX that modifies its behavior of searching. A flag changes the default search behavior of a regular expression. A flag is destiguished with using a single lowercase alphabetic character. 
 
-The example REGEX inlcudes "g" which stands for global search. 
-### Character Escapes
-There are several characters that need to be escaped to be taken literally (at least outside char classes):
+### Grouping and Capturing
+The example includes the following groups: ([a-z0-9_\.-]+), this expression includes + which matched at least one or more of any characters n the square brackets [a-z0-9_\.-]. a-z is lowercase letters from a to z, 0-9 is a number from 0 - 9. When matching, it has to make sure that the following guidelines of the group are there before it can move on the next group. 
 
-- Brackets: []
-- Parentheses: ()
-- Curly braces: {}
-- Operators: *, +, ?, |
-- Anchors: ^, $
-- Others: ., \
-
-In order to use a literal ^ at the start or a literal $ at the end of a regex, the character must be escaped.
-Some flavors only use ^ and $ as metacharacters when they are at the start or end of the regex respectively. In those flavors, no additional escaping is necessary. It's usually just best to escape them anyway.
+### Greedy and Lazy Match
+The Greedy match, matches the longest possible string. The standard qualifiers in regular expressions are greedy, meaning they match as much as they can, only returning as necessary to match what it can of the REGEX. A Lazy match is the opposite and matches the shortest string possible. By using a lazy qualitier, the expression tries the minimal match first. The example REGEX inlcudes "g" which stands for global search. 
 
 ## Author
 
