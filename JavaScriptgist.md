@@ -1,10 +1,10 @@
-# Title (replace with your title)
+# Title (Computer Science for JavaScript: Regex Tutorial)
 
 A REGEX is a regular expression that is used to search for matches in a value or patterns within a string. The example is REGEX looking for the string to match the general markup of an email address. 
 
 ## Summary
 
-/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ This REGEX tutorial will go over the REGEX of matching an email address. For this REGEX, each piece of the string has a responibilty to make sure or verify the user enters an email address in the correct format which needs to begin with characters followed by @ symbol and then domain. 
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ This REGEX tutorial will go over the REGEX of matching an email address. For this REGEX, each piece of the string has a responsibility  to make sure or verify the user enters an email address in the correct format which needs to begin with characters followed by @ symbol and then domain. 
 
 ## Table of Contents
 
