@@ -43,6 +43,17 @@ A flag is an optional paramanater to a REGEX that modifies its behavior of searc
 
 The example REGEX inlcudes "g" which stands for global search. 
 ### Character Escapes
+There are several characters that need to be escaped to be taken literally (at least outside char classes):
+
+- Brackets: []
+- Parentheses: ()
+- Curly braces: {}
+- Operators: *, +, ?, |
+- Anchors: ^, $
+- Others: ., \
+
+In order to use a literal ^ at the start or a literal $ at the end of a regex, the character must be escaped.
+Some flavors only use ^ and $ as metacharacters when they are at the start or end of the regex respectively. In those flavors, no additional escaping is necessary. It's usually just best to escape them anyway.
 
 ## Author
 
