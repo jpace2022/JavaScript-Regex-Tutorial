@@ -1,50 +1,75 @@
 # Title (Computer Science for JavaScript: Regex Tutorial)
 
-A REGEX is a regular expression that is used to search for matches in a value or patterns within a string. The example is REGEX looking for the string to match the general markup of an email address. 
+This is a tutorial that will covers the main concepts of regular expressions or “REGEX”. The example I will be reviewing is the string used to match values for email addresses. /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ## Summary
 
-/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ This REGEX tutorial will go over the REGEX of matching an email address. For this REGEX, each piece of the string has a responsibility  to make sure or verify the user enters an email address in the correct format which needs to begin with characters followed by @ symbol and then domain. 
+REGEX or also referred to as a regular expression are sequences of characters that specifies a search parameter. Regular expressions are used to confirm the input or to find or replace characters within text. This expression is deemed a REGEX and are considered universal in most programming languages:
+
+ /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
 
 ## Table of Contents
 
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
-- [Bracket Expressions](#bracket-expressions)
-- [Character Classes](#character-classes)
 - [The OR Operator](#the-or-operator)
+- [Character Classes](#character-classes)
 - [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
+- [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Character Escapes](#character-escapes)
+- [Boundaries](#boundaries)
+- [Back References](#back-references)
+- [Looking Ahead and Looking Behind](#looking-ahead-and-looking-behind)
 
 ## Regex Components
-/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+* Matching an Email: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
 
 ### Anchors
-Anchors are the beginning and finish of a regular expression. In the following code,
-/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, the anchor is the ^ and the $. Anchors are mostly used to validate an input. 
+Usually, Anchors are used to authenticate an input. Frequently in order to match a position prior to, after or in the middle of. An example of an Anchor is ```^``` that can match the beginning of a string and ```$``` will inidicate the end. 
 
 ### Quantifiers
-In order for a match to be found, a Quantifier must specify how many instances a character must be present in the input. The email REGEX has the + as the quantifier that repeats a match one or more times.
+When you have an input, in order to find a match, a Quantifiers indicate how many occurrences of a character must be present. Please see some examples below;
 
-### Bracket Expressions
-Backet expressions are used to specify characters to match. Square brackets are used to indicate a set of characters to match and curly braces are used to specify an exact amount of characters to match. 
+```
+Greedy Quantifier       Lazy Quantifier       Description  
+?                           ??              Matches 0 or 1 time. 
 
-### Character Classes
-Character class distinguishes specific kinds of characters from certain sets. Any one can happen in a string input for a match to succeed. 
+```
 
 ### The OR Operator
-The "or" operator within a regular expression is defined as using the | element. The component indicates that it could be either of the components that we are seperating with the |. 
+The vertical bar symbol ```|``` is the OR operator in this case and it can be utilized to match any characters or expression which allows for an either/or conditional match.
+
+### Character Classes
+Character class distinguishes a specific kind of characters from other certain sets. Which can occur in an input string for a match to be successful. Please see examples below. 
+```
+ \w: Word
+ \s: Whitespace
+ \d: Digit
+
+```
 
 ### Flags
 A flag is an optional paramanater to a REGEX that modifies its behavior of searching. A flag changes the default search behavior of a regular expression. A flag is destiguished with using a single lowercase alphabetic character. 
 
 ### Grouping and Capturing
-The example includes the following groups: ([a-z0-9_\.-]+), this expression includes + which matched at least one or more of any characters n the square brackets [a-z0-9_\.-]. a-z is lowercase letters from a to z, 0-9 is a number from 0 - 9. When matching, it has to make sure that the following guidelines of the group are there before it can move on the next group. 
+With REGEX ```()``` you are able to “capture” a group that will match and it will also indicate that you are intending to use part of the string that is within the parentheses. Grouping constructs delineate the subexpressions of a regular expression and capture the substrings of an input string. 
+
+### Bracket Expressions
+In order to specify a character to match, you must use square brackets ```[]``` to indicate a set of characters that need to be matched and if you want to specify an exact amount of characters, curly braces ```{}``` should be used.  
 
 ### Greedy and Lazy Match
-The Greedy match, matches the longest possible string. The standard qualifiers in regular expressions are greedy, meaning they match as much as they can, only returning as necessary to match what it can of the REGEX. A Lazy match is the opposite and matches the shortest string possible. By using a lazy qualitier, the expression tries the minimal match first. The example REGEX inlcudes "g" which stands for global search. 
+When you have a GREEDY match, it will match you with the longest string available. The typical quantifiers in REGEX are GREEDY, which means they match as much as they can, only returning as necessary to match what it can of the REGEX. 
+
+A LAZY match matches the shortest string possible. By using a LAZY quantifier, an expression will try the shortest match first. 
+
+### Boundaries
+
+### Back References
+
+### Looking Ahead and Looking Behind
 
 ## Author
 
