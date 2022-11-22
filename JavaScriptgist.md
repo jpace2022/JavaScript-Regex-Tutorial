@@ -20,8 +20,6 @@ REGEX or also referred to as a regular expression are sequences of characters th
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Boundaries](#boundaries)
-- [Back References](#back-references)
-- [Looking Ahead and Looking Behind](#looking-ahead-and-looking-behind)
 
 ## Regex Components
 
@@ -66,10 +64,8 @@ When you have a GREEDY match, it will match you with the longest string availabl
 A LAZY match matches the shortest string possible. By using a LAZY quantifier, an expression will try the shortest match first. 
 
 ### Boundaries
-
-### Back References
-
-### Looking Ahead and Looking Behind
+When you use the ```\b``` it will allow you to perform a 'whole words only' search in the form of ```\bword\b``` and this allows you to narrow down your search criteria even further and eliminate locating certain words. 
+When you use the ```\B``` parameters it allows you to set 'not-word' criteria that will also help to improve search criteria.
 
 ## Author
 
